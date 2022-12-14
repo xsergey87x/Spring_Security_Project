@@ -33,7 +33,7 @@ public class AuthController {
         {
             return ResponseEntity.ok(jwtTokenUtil.generateToken(user));
         }
-        return ResponseEntity
+        return ResponseEntity.status(400).body("Something bad happened");
     }
 
 }
