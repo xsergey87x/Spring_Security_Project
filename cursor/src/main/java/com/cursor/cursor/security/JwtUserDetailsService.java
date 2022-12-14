@@ -20,10 +20,10 @@ public class JwtUserDetailsService implements UserDetailsService {
 
         if ("xxx@ukr.net".equals(email))
         {
-            return new User("Artur","pasword", Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMIN")));
+            return new User("Artur","qwerty", Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMIN")));
         }else if ("yyy@ukr.net".equals(email))
         {
-            return new User("John","pasword2", Collections.singleton(new SimpleGrantedAuthority("ROLE_USER")));
+            return new User("John","ytrewq", Collections.singleton(new SimpleGrantedAuthority("ROLE_USER")));
         }
  else {
             throw new UsernameNotFoundException("User not found with username: " + email);
