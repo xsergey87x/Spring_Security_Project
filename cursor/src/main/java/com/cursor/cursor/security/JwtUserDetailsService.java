@@ -13,20 +13,20 @@ import java.util.Collections;
 @Component
 public class JwtUserDetailsService implements UserDetailsService {
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
         UserEntity user1 = new UserEntity("Artur","xxx@ukr.net","qwerty", "ROLE_ADMIN");
         UserEntity user2 = new UserEntity("John","yyy@ukr.net","ytrewq", "ROLE_USER");
 
-        if ("xxx@ukr.net".equals(email))
+        if ("Artur".equals(userName))
         {
             return new User("Artur","qwerty", Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMIN")));
-        }else if ("yyy@ukr.net".equals(email))
+        }else if ("John".equals(userName))
         {
             return new User("John","ytrewq", Collections.singleton(new SimpleGrantedAuthority("ROLE_USER")));
         }
  else {
-            throw new UsernameNotFoundException("User not found with username: " + email);
+            throw new UsernameNotFoundException("User not found with username: " + userName);
         }
     }
 }

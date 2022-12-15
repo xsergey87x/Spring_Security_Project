@@ -6,12 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/")
+@RequestMapping(value = "/auth")
 public class AppController {
 
     @GetMapping(value = "/hello")
     public String sayHello()
     {
+
         return "Hello";
     }
 
