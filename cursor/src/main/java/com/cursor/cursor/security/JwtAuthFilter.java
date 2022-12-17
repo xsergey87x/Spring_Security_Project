@@ -33,7 +33,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-       final String requestTokenHeader = request.getHeader("Authorization");
+        final String requestTokenHeader = request.getHeader("Authorization");
         String username = null;
         String jwtToken = null;
 
@@ -47,8 +47,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                 System.out.println("JWT Token has expired");
             }
         } else {
-            if (!Objects.equals(request.getRequestURI(), "/auth/authenticate"))
-            {
+            if (!Objects.equals(request.getRequestURI(), "/auth/authenticate")) {
                 logger.warn("JWT Token does not begin with Bearer String");
                 response.sendError(403, "Token is wrong");
             }

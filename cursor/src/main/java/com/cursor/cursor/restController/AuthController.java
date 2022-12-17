@@ -25,12 +25,10 @@ public class AuthController {
     private final JwtTokenUtil jwtTokenUtil;
 
     @PostMapping(value = "/authenticate")
-    public ResponseEntity<String> authenticate(@RequestBody AuthenticationRequest request)
-    {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUserName(),request.getPassword()));
+    public ResponseEntity<String> authenticate(@RequestBody AuthenticationRequest request) {
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUserName(), request.getPassword()));
         UserDetails user = jwtUserDetailsService.loadUserByUsername(request.getUserName());
-        if (user != null)
-        {
+        if (user != null) {
             return ResponseEntity.ok(jwtTokenUtil.generateToken(user));
         }
         return ResponseEntity.status(400).body("Something bad happened");
