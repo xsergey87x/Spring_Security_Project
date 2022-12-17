@@ -56,7 +56,7 @@ public class CustomUserDetail implements UserDetails {
     public static UserDetails getUserDetailsFromUser(UserEntity user) {
 
         return new org.springframework.security.core.userdetails.User(
-                user.getUserName(), user.getPassword(), user.isActive(), true,true,true,
+                user.getName(), user.getPassword(), user.isActive(), true,true,true,
                 new ArrayList<SimpleGrantedAuthority>());
     }
 }

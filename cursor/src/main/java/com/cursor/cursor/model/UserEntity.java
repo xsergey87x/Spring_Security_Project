@@ -10,20 +10,20 @@ import javax.persistence.*;
 @NoArgsConstructor
  public class UserEntity {
 
-    public UserEntity(String userName, String password) {
-        this.userName = userName;
+    public UserEntity(String name, String password) {
+        this.name = name;
         this.password = password;
     }
 
-    public UserEntity(String userName, String email, String password, String roles) {
-        this.userName = userName;
+    public UserEntity(String name, String email, String password, String roles) {
+        this.name = name;
         this.email = email;
         this.password = password;
         this.roles = roles;
     }
 
-    public UserEntity(String userName, String email, String password, boolean isActive, String roles) {
-        this.userName = userName;
+    public UserEntity(String name, String email, String password, boolean isActive, String roles) {
+        this.name = name;
         this.email = email;
         this.password = password;
         this.isActive = isActive;
@@ -34,7 +34,9 @@ import javax.persistence.*;
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Long id;
 
-        private String userName;
+    @Column(name="name")
+        private String name;
+
         private String email;
         private String password;
         private boolean isActive;
