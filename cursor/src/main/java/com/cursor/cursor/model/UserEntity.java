@@ -42,5 +42,16 @@ import javax.persistence.*;
         private boolean isActive;
         private String roles;
 
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", isActive=" + isActive +
+                ", roles='" + roles + '\'' +
+                '}';
+    }
 }
 

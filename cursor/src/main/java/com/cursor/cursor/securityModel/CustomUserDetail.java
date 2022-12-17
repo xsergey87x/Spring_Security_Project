@@ -3,6 +3,7 @@ package com.cursor.cursor.securityModel;
 import com.cursor.cursor.model.UserEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -59,4 +60,7 @@ public class CustomUserDetail implements UserDetails {
                 user.getName(), user.getPassword(), user.isActive(), true,true,true,
                 new ArrayList<SimpleGrantedAuthority>());
     }
+
+//    @Bean
+//    public String get(){return "";}
 }
