@@ -27,13 +27,13 @@ public class JwtUserDetailsService implements UserDetailsService {
         UserEntity user2 = new UserEntity("John","yyy@ukr.net","ytrewq", "ROLE_USER");
 
         UserEntity user = userRepository.findByUserName(userName).orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + userName));
+         return new User(user.getUserName(),user.getPassword(), user.isActive(),true,true,true, Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMIN")));
 
-
-        if ("Artur".equals(userName)){
-            return new User("Artur","qwerty", Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMIN")));
-        }else if ("John".equals(userName)) {
-            return new User("John","ytrewq", Collections.singleton(new SimpleGrantedAuthority("ROLE_USER")));
-        } else {throw new UsernameNotFoundException("User not found with username: " + userName); }
+//        if ("Artur".equals(userName)){
+//            return new User("Artur","qwerty", Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMIN")));
+//        }else if ("John".equals(userName)) {
+//            return new User("John","ytrewq", Collections.singleton(new SimpleGrantedAuthority("ROLE_USER")));
+//        } else {throw new UsernameNotFoundException("User not found with username: " + userName); }
 
     }
 }

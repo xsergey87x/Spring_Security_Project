@@ -1,11 +1,13 @@
 package com.cursor.cursor.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@NoArgsConstructor
  public class UserEntity {
 
     public UserEntity(String userName, String password) {

@@ -1,6 +1,7 @@
 package com.cursor.cursor.securityModel;
 
 import com.cursor.cursor.model.UserEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Collection;
 
-@Component
 @RequiredArgsConstructor
 public class CustomUserDetail implements UserDetails {
 
